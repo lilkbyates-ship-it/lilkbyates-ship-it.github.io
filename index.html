@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>💌 Valentine?</title>
+  <title>💌 valentine question</title>
   <style>
     body {
       margin: 0;
       height: 100vh;
-      background: linear-gradient(135deg, #ff758c, #ff7eb3);
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
+      font-family: arial, sans-serif;
       color: white;
       text-align: center;
+    }
+    .default {
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
     }
     .card {
       background: rgba(0,0,0,0.2);
@@ -25,6 +27,10 @@
       font-size: 2.2em;
       margin-bottom: 20px;
     }
+    p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
     button {
       padding: 12px 24px;
       margin: 10px;
@@ -32,30 +38,58 @@
       border-radius: 25px;
       font-size: 1em;
       cursor: pointer;
+      text-transform: lowercase;
     }
     .yes {
-      background: #4CAF50;
+      background: #4caf50;
       color: white;
     }
     .no {
       background: #f44336;
       color: white;
     }
+    .response {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      font-size: 2em;
+    }
+    .response img {
+      margin-top: 20px;
+      max-width: 200px;
+    }
   </style>
 </head>
-<body>
+<body class="default">
   <div class="card">
-    <h1>Will you be my Valentine? 💘</h1>
-    <button class="yes" onclick="yes()">Yes 💕</button>
-    <button class="no" onclick="no()">No 😭</button>
+    <h1>hey aaliyah! 💭</h1>
+    <p>will you be my valentine? 💘</p>
+    <button class="yes" onclick="yes()">yes</button>
+    <button class="no" onclick="no()">no</button>
   </div>
 
   <script>
     function yes() {
-      document.body.innerHTML = "<h1>YAY 💖 I’m so happy ❤️</h1>";
+      document.body.className = "";
+      document.body.style.background = "#4caf50";
+      document.body.innerHTML = `
+        <div class="response">
+          <p>i appreciate it! 😊</p>
+          <img src="https://cataas.com/cat/says/i%20appreciate%20it" alt="cat says: i appreciate it">
+        </div>
+      `;
     }
+
     function no() {
-      alert("okay but like… think again 😌");
+      document.body.className = "";
+      document.body.style.background = "#f44336";
+      document.body.innerHTML = `
+        <div class="response">
+          <p>you suck 😒</p>
+        </div>
+      `;
     }
   </script>
 </body>
